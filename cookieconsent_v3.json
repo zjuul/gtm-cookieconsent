@@ -1,0 +1,335 @@
+{
+    "exportFormatVersion": 1.3,
+    "exportTime": "2016-07-13 07:09:46",
+    "containerVersion": {
+        "accountId": "124588580",
+        "containerId": "2385654",
+        "containerVersionId": "3",
+        "deleted": false,
+        "container": {
+            "accountId": "124588580",
+            "containerId": "2385654",
+            "name": "Cookie permission",
+            "publicId": "GTM-PWCRG2",
+            "timeZoneCountryId": "US",
+            "timeZoneId": "America/Los_Angeles",
+            "notes": "",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1468393707155",
+            "enabledBuiltInVariable": [
+                "PAGE_URL",
+                "PAGE_HOSTNAME",
+                "PAGE_PATH",
+                "REFERRER",
+                "EVENT"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "tagId": "1",
+                "name": "cookiepermission - ask",
+                "type": "html",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  function setCookie(value, box) {\n    var d = new Date();\n    d.setTime(d.getTime() + ({{cookiepermission - expiry}}*24*60*60*1000));\n    var expires = \"expires=\"+ d.toUTCString();\n    document.cookie = '{{cookiepermission - cookiename}}' + \"=\" + value + \"; \" + expires;\n    \n    // remove box\n    box.style.display = 'none';\n    \n    if (value == \"yes\")\n       dataLayer.push( { event: 'cookiepermission first page yes' } );\n    else\n       dataLayer.push( { event: 'cookiepermission first page no' } );\n    \n  }\n  \n  var txt = \"{{cookiepermission - question}}\";\n  var cookiepermissionDialogbox = document.createElement(\"div\");\n  cookiepermissionDialogbox.id = 'cp-overlay';\n  cookiepermissionDialogbox.style.position = \"fixed\";\n  cookiepermissionDialogbox.style.top = \"0px\";\n  cookiepermissionDialogbox.style.width = \"100%\";\n  cookiepermissionDialogbox.style.height = \"100%\";\n  cookiepermissionDialogbox.style.zIndex = \"1000\";\n  cookiepermissionDialogbox.style.backgroundColor = \"rgba(0, 0, 0, 0.5)\";\n    \n  cpdiv = document.createElement(\"div\");\n  cpdiv.id = 'cp-inner';\n  cpdiv.style.textAlign = \"center\";\n  cpdiv.style.backgroundColor = \"white\";\n  cpdiv.style.margin = \"auto\";\n  cpdiv.style.width = \"50%\";\n  cpdiv.style.padding = \"70px\";\n  cpdiv.style.opacity = \"1\";\n  \n  cpQuestion = document.createElement(\"h2\");\n  cpQuestion.id = 'cp-question';\n  cpQuestion.style.textAlign = \"center\";\n  cpQuestion.innerHTML = txt;\n  \n  cpOptiondiv = document.createElement(\"div\");\n  cpOptiondiv.id = 'cp-options';\n  cpOptiondiv.style.textAlign = \"center\";\n  \n  cpSep = document.createElement(\"span\");\n  cpSep.class = \"cp-separator\";\n  cpSep.innerHTML = '&nbsp;-&nbsp;';\n  \n  cpYes = document.createElement(\"span\");\n  cpYes.id = \"cp-yes\";\n  \n  cpYesA = document.createElement(\"a\");\n  cpYesA.setAttribute(\"href\", \"#\");\n  cpYesA.setAttribute(\"onclick\", \"javascript:setCookie('yes', cookiepermissionDialogbox);\");\n  cpYesA.innerHTML = '{{cookiepermission - yes text}}';\n  \n  cpNo = document.createElement(\"span\");\n  cpNo.id = \"cp-no\";\n  \n  cpNoA = document.createElement(\"a\");\n  cpNoA.setAttribute(\"href\", \"#\");\n  cpNoA.setAttribute(\"onclick\", \"javascript:setCookie('no', cookiepermissionDialogbox);\");\n  cpNoA.innerHTML = '{{cookiepermission - no text}}';\n  \n  // insert into body \n  document.body.appendChild(cookiepermissionDialogbox);\n  \n  cookiepermissionDialogbox.appendChild(cpdiv);\n  cpdiv.appendChild(cpQuestion);\n  cpdiv.appendChild(cpOptiondiv);\n  cpOptiondiv.appendChild(cpYes);\n  cpOptiondiv.appendChild(cpSep);\n  cpOptiondiv.appendChild(cpNo);\n  cpYes.appendChild(cpYesA);\n  cpNo.appendChild(cpNoA);\n  \n</script>\n  "
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1468393685479",
+                "firingTriggerId": [
+                    "6"
+                ],
+                "parentFolderId": "9",
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "tagId": "2",
+                "name": "cookiepermission SAMPLE Tag",
+                "type": "html",
+                "liveOnly": false,
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  console.log(\"Visitor says yes\");\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1468313609279",
+                "firingTriggerId": [
+                    "4",
+                    "7"
+                ],
+                "parentFolderId": "9",
+                "tagFiringOption": "ONCE_PER_EVENT"
+            }
+        ],
+        "fingerprint": "1468393719001",
+        "trigger": [
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "triggerId": "8",
+                "name": "cookiepermission - firstpage no",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "cookiepermission first page no"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1468313407924",
+                "parentFolderId": "9"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "triggerId": "7",
+                "name": "cookiepermission - firstpage yes",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "cookiepermission first page yes"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1468313414738",
+                "parentFolderId": "9"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "triggerId": "5",
+                "name": "cookiepermission - no",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{cookiepermission - content}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "no"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1468313422158",
+                "parentFolderId": "9"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "triggerId": "6",
+                "name": "cookiepermission - unknown",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{cookiepermission - content}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "yes|no"
+                            },
+                            {
+                                "type": "BOOLEAN",
+                                "key": "negate",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1468313428568",
+                "parentFolderId": "9"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "triggerId": "4",
+                "name": "cookiepermission - yes",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{cookiepermission - content}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "yes"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1468313435481",
+                "parentFolderId": "9"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "variableId": "1",
+                "name": "cookiepermission - content",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "{{cookiepermission - cookiename}}"
+                    }
+                ],
+                "fingerprint": "1468313448086",
+                "parentFolderId": "9"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "variableId": "2",
+                "name": "cookiepermission - cookiename",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "cookiepermission"
+                    }
+                ],
+                "fingerprint": "1468313454537",
+                "parentFolderId": "9"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "variableId": "3",
+                "name": "cookiepermission - expiry",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "365"
+                    }
+                ],
+                "fingerprint": "1468313460663",
+                "parentFolderId": "9"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "variableId": "7",
+                "name": "cookiepermission - no text",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "Liever niet"
+                    }
+                ],
+                "fingerprint": "1468313467602",
+                "parentFolderId": "9"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "variableId": "4",
+                "name": "cookiepermission - question",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "Deze site plaatst enkele cookies. Akkoord?"
+                    }
+                ],
+                "fingerprint": "1468313475674",
+                "parentFolderId": "9"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "variableId": "6",
+                "name": "cookiepermission - yes text",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "Prima hoor"
+                    }
+                ],
+                "fingerprint": "1468313629442",
+                "parentFolderId": "9"
+            }
+        ],
+        "folder": [
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "folderId": "9",
+                "name": "cookiepermission",
+                "fingerprint": "1468313325396"
+            }
+        ]
+    }
+}
