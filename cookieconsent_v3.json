@@ -1,44 +1,36 @@
 {
-    "exportFormatVersion": 1.3,
-    "exportTime": "2016-07-13 07:09:46",
+    "exportFormatVersion": 2,
+    "exportTime": "2018-05-24 08:11:14",
     "containerVersion": {
+        "path": "accounts/124588580/containers/2385654/versions/5",
         "accountId": "124588580",
         "containerId": "2385654",
-        "containerVersionId": "3",
-        "deleted": false,
+        "containerVersionId": "5",
+        "name": "Added path to cookie /",
         "container": {
+            "path": "accounts/124588580/containers/2385654",
             "accountId": "124588580",
             "containerId": "2385654",
             "name": "Cookie permission",
             "publicId": "GTM-PWCRG2",
-            "timeZoneCountryId": "US",
-            "timeZoneId": "America/Los_Angeles",
-            "notes": "",
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1468393707155",
-            "enabledBuiltInVariable": [
-                "PAGE_URL",
-                "PAGE_HOSTNAME",
-                "PAGE_PATH",
-                "REFERRER",
-                "EVENT"
-            ]
+            "fingerprint": "1527149369568",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/124588580/containers/2385654/workspaces?apiLink=container"
         },
         "tag": [
             {
                 "accountId": "124588580",
                 "containerId": "2385654",
-                "tagId": "1",
+                "tagId": "3",
                 "name": "cookiepermission - ask",
                 "type": "html",
-                "liveOnly": false,
                 "parameter": [
                     {
                         "type": "TEMPLATE",
                         "key": "html",
-                        "value": "<script>\n  function setCookie(value, box) {\n    var d = new Date();\n    d.setTime(d.getTime() + ({{cookiepermission - expiry}}*24*60*60*1000));\n    var expires = \"expires=\"+ d.toUTCString();\n    document.cookie = '{{cookiepermission - cookiename}}' + \"=\" + value + \"; \" + expires;\n    \n    // remove box\n    box.style.display = 'none';\n    \n    if (value == \"yes\")\n       dataLayer.push( { event: 'cookiepermission first page yes' } );\n    else\n       dataLayer.push( { event: 'cookiepermission first page no' } );\n    \n  }\n  \n  var txt = \"{{cookiepermission - question}}\";\n  var cookiepermissionDialogbox = document.createElement(\"div\");\n  cookiepermissionDialogbox.id = 'cp-overlay';\n  cookiepermissionDialogbox.style.position = \"fixed\";\n  cookiepermissionDialogbox.style.top = \"0px\";\n  cookiepermissionDialogbox.style.width = \"100%\";\n  cookiepermissionDialogbox.style.height = \"100%\";\n  cookiepermissionDialogbox.style.zIndex = \"1000\";\n  cookiepermissionDialogbox.style.backgroundColor = \"rgba(0, 0, 0, 0.5)\";\n    \n  cpdiv = document.createElement(\"div\");\n  cpdiv.id = 'cp-inner';\n  cpdiv.style.textAlign = \"center\";\n  cpdiv.style.backgroundColor = \"white\";\n  cpdiv.style.margin = \"auto\";\n  cpdiv.style.width = \"50%\";\n  cpdiv.style.padding = \"70px\";\n  cpdiv.style.opacity = \"1\";\n  \n  cpQuestion = document.createElement(\"h2\");\n  cpQuestion.id = 'cp-question';\n  cpQuestion.style.textAlign = \"center\";\n  cpQuestion.innerHTML = txt;\n  \n  cpOptiondiv = document.createElement(\"div\");\n  cpOptiondiv.id = 'cp-options';\n  cpOptiondiv.style.textAlign = \"center\";\n  \n  cpSep = document.createElement(\"span\");\n  cpSep.class = \"cp-separator\";\n  cpSep.innerHTML = '&nbsp;-&nbsp;';\n  \n  cpYes = document.createElement(\"span\");\n  cpYes.id = \"cp-yes\";\n  \n  cpYesA = document.createElement(\"a\");\n  cpYesA.setAttribute(\"href\", \"#\");\n  cpYesA.setAttribute(\"onclick\", \"javascript:setCookie('yes', cookiepermissionDialogbox);\");\n  cpYesA.innerHTML = '{{cookiepermission - yes text}}';\n  \n  cpNo = document.createElement(\"span\");\n  cpNo.id = \"cp-no\";\n  \n  cpNoA = document.createElement(\"a\");\n  cpNoA.setAttribute(\"href\", \"#\");\n  cpNoA.setAttribute(\"onclick\", \"javascript:setCookie('no', cookiepermissionDialogbox);\");\n  cpNoA.innerHTML = '{{cookiepermission - no text}}';\n  \n  // insert into body \n  document.body.appendChild(cookiepermissionDialogbox);\n  \n  cookiepermissionDialogbox.appendChild(cpdiv);\n  cpdiv.appendChild(cpQuestion);\n  cpdiv.appendChild(cpOptiondiv);\n  cpOptiondiv.appendChild(cpYes);\n  cpOptiondiv.appendChild(cpSep);\n  cpOptiondiv.appendChild(cpNo);\n  cpYes.appendChild(cpYesA);\n  cpNo.appendChild(cpNoA);\n  \n</script>\n  "
+                        "value": "<script>\n  function setCookie(value, box) {\n    var d = new Date();\n    d.setTime(d.getTime() + ({{cookiepermission - expiry}}*24*60*60*1000));\n    var expires = \"expires=\"+ d.toUTCString();\n    document.cookie = '{{cookiepermission - cookiename}}' + \"=\" + value + \"; path=/; \" + expires;\n    \n    // remove box\n    box.style.display = 'none';\n    \n    if (value == \"yes\")\n       dataLayer.push( { event: 'cookiepermission first page yes' } );\n    else\n       dataLayer.push( { event: 'cookiepermission first page no' } );\n    \n  }\n  \n  var txt = \"{{cookiepermission - question}}\";\n  var cookiepermissionDialogbox = document.createElement(\"div\");\n  cookiepermissionDialogbox.id = 'cp-overlay';\n  cookiepermissionDialogbox.style.position = \"fixed\";\n  cookiepermissionDialogbox.style.top = \"0px\";\n  cookiepermissionDialogbox.style.width = \"100%\";\n  cookiepermissionDialogbox.style.height = \"100%\";\n  cookiepermissionDialogbox.style.zIndex = \"1000\";\n  cookiepermissionDialogbox.style.backgroundColor = \"rgba(0, 0, 0, 0.5)\";\n    \n  cpdiv = document.createElement(\"div\");\n  cpdiv.id = 'cp-inner';\n  cpdiv.style.textAlign = \"center\";\n  cpdiv.style.backgroundColor = \"white\";\n  cpdiv.style.margin = \"auto\";\n  cpdiv.style.width = \"50%\";\n  cpdiv.style.padding = \"70px\";\n  cpdiv.style.opacity = \"1\";\n  \n  cpQuestion = document.createElement(\"h2\");\n  cpQuestion.id = 'cp-question';\n  cpQuestion.style.textAlign = \"center\";\n  cpQuestion.innerHTML = txt;\n  \n  cpOptiondiv = document.createElement(\"div\");\n  cpOptiondiv.id = 'cp-options';\n  cpOptiondiv.style.textAlign = \"center\";\n  \n  cpSep = document.createElement(\"span\");\n  cpSep.class = \"cp-separator\";\n  cpSep.innerHTML = '&nbsp;-&nbsp;';\n  \n  cpYes = document.createElement(\"span\");\n  cpYes.id = \"cp-yes\";\n  \n  cpYesA = document.createElement(\"a\");\n  cpYesA.setAttribute(\"href\", \"#\");\n  cpYesA.setAttribute(\"onclick\", \"javascript:setCookie('yes', cookiepermissionDialogbox);\");\n  cpYesA.innerHTML = '{{cookiepermission - yes text}}';\n  \n  cpNo = document.createElement(\"span\");\n  cpNo.id = \"cp-no\";\n  \n  cpNoA = document.createElement(\"a\");\n  cpNoA.setAttribute(\"href\", \"#\");\n  cpNoA.setAttribute(\"onclick\", \"javascript:setCookie('no', cookiepermissionDialogbox);\");\n  cpNoA.innerHTML = '{{cookiepermission - no text}}';\n  \n  // insert into body \n  document.body.appendChild(cookiepermissionDialogbox);\n  \n  cookiepermissionDialogbox.appendChild(cpdiv);\n  cpdiv.appendChild(cpQuestion);\n  cpdiv.appendChild(cpOptiondiv);\n  cpOptiondiv.appendChild(cpYes);\n  cpOptiondiv.appendChild(cpSep);\n  cpOptiondiv.appendChild(cpNo);\n  cpYes.appendChild(cpYesA);\n  cpNo.appendChild(cpNoA);\n  \n</script>\n  "
                     },
                     {
                         "type": "BOOLEAN",
@@ -46,7 +38,7 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1468393685479",
+                "fingerprint": "1527149401932",
                 "firingTriggerId": [
                     "6"
                 ],
@@ -59,7 +51,6 @@
                 "tagId": "2",
                 "name": "cookiepermission SAMPLE Tag",
                 "type": "html",
-                "liveOnly": false,
                 "parameter": [
                     {
                         "type": "TEMPLATE",
@@ -72,7 +63,7 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1468313609279",
+                "fingerprint": "1527149199323",
                 "firingTriggerId": [
                     "4",
                     "7"
@@ -81,7 +72,6 @@
                 "tagFiringOption": "ONCE_PER_EVENT"
             }
         ],
-        "fingerprint": "1468393719001",
         "trigger": [
             {
                 "accountId": "124588580",
@@ -106,7 +96,7 @@
                         ]
                     }
                 ],
-                "fingerprint": "1468313407924",
+                "fingerprint": "1527149199310",
                 "parentFolderId": "9"
             },
             {
@@ -132,7 +122,7 @@
                         ]
                     }
                 ],
-                "fingerprint": "1468313414738",
+                "fingerprint": "1527149199311",
                 "parentFolderId": "9"
             },
             {
@@ -158,7 +148,7 @@
                         ]
                     }
                 ],
-                "fingerprint": "1468313422158",
+                "fingerprint": "1527149199314",
                 "parentFolderId": "9"
             },
             {
@@ -215,7 +205,7 @@
                         ]
                     }
                 ],
-                "fingerprint": "1468313435481",
+                "fingerprint": "1527149199315",
                 "parentFolderId": "9"
             }
         ],
@@ -286,7 +276,7 @@
                         "value": "Liever niet"
                     }
                 ],
-                "fingerprint": "1468313467602",
+                "fingerprint": "1527149199317",
                 "parentFolderId": "9"
             },
             {
@@ -302,7 +292,7 @@
                         "value": "Deze site plaatst enkele cookies. Akkoord?"
                     }
                 ],
-                "fingerprint": "1468313475674",
+                "fingerprint": "1527149199318",
                 "parentFolderId": "9"
             },
             {
@@ -318,7 +308,7 @@
                         "value": "Prima hoor"
                     }
                 ],
-                "fingerprint": "1468313629442",
+                "fingerprint": "1527149199319",
                 "parentFolderId": "9"
             }
         ],
@@ -330,6 +320,40 @@
                 "name": "cookiepermission",
                 "fingerprint": "1468313325396"
             }
-        ]
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "124588580",
+                "containerId": "2385654",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1527149457637",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/124588580/containers/2385654/versions/5?apiLink=version"
     }
 }
